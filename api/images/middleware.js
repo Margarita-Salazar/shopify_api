@@ -2,12 +2,12 @@ const Images = require('./model');
 
 function idChecker(req, res, next) {
     Images.getById(req.params.id)
-        .then(potluck => {
-            if (potluck) {
-                req.potluck = potluck;
+        .then(image => {
+            if (image) {
+                req.image = image;
                 next();
             } else {
-                next({ status: 404, message: 'image not found' });
+                next({ status: 404, message: 'Image not found' });
             }
 
         })

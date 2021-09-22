@@ -1,7 +1,7 @@
 const db = require('../../data/dbconfig');
 
 function add(imageData) {
-    return db("images").insert(imageData, ["image_title", "item_category"]);
+    return db("images").insert(imageData, ["image_title"]);
 }
 
 
@@ -26,4 +26,5 @@ function getById(id) {
 module.exports = {
     add,
     remove,
+    getById
 };
